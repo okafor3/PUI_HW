@@ -1,91 +1,294 @@
+/*********** GENERAL ************/
+
 header {
 text-align: center;
 }
 
-#todo-lists {
-    margin: 0 auto;
-    width: 80%;
+body {
+    margin: 0;
+    background-color: navajowhite;
+}
+
+.home {
+    background-image: url('background.png');
+}
+
+.item{
+    background-image: url('item_b.png');
+}
+
+.stylish {
+    font-weight: bold;
+    color: saddlebrown
+  }
+
+.button {
+    background-color: #C9895E;
+    color: white;
+    padding: 15px 32px;
+    display: inline-block;
+    border: none;
+    border-radius: 20px;
+
+}
+/*********** HEADER ************/
+   
+header {
+    text-align: center;
+    padding: 10px;
+    background-color: saddlebrown;
+    color: white;
 }
 
 body {
     margin: 0;
+    color: saddlebrown;
 }
 
-/*********** HEADER ************/
-header {
-    text-align: center;
-    padding: 10px;
-}
-    
 h1 {
     margin: 0;
 }
-/*********** LISTS ************/
-    
-#todo-lists {
-    margin: 0 auto;
-    width: 80%;
-    padding-top: 10px;
-}
+/*********** HOME PAGE ************/
 
-.list {
-    padding: 10px;
-    margin-bottom: 10px;
- }
-    
-.list-title {
-    margin-left: 20px;
- }
-
- body {
-    margin: 0;
-    color: teal;
-}
-/*********** HEADER ************/
-header {
+#box{
+    width: 100%;
+    height: 405px;
+    margin-top: 70px; 
+    display: flex;
     text-align: center;
-    padding: 10px;
-    background-color: teal;
+    justify-content: center;
+    align-items: center;
+    line-height: 200%;
+}
+.square {
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 50px solid white;
+}
+
+.rr{
+    border-radius: 15px;
+}
+
+.text {
+    align-items: center; 
+}
+
+.words {
+    font-size: 45px;
+}
+.words1 {
+    color: sienna;
+    font-size: 30px;
+
+}
+
+
+/*********** MENU PAGE ************/
+
+#container {
+    position: relative;
+    margin-top: 30px; 
+    text-align: center;
+    align-items: center;
+}
+
+
+.content {
+    position: absolute; 
+    top: 130px; 
+    left: 0; 
+    width: 100%; 
+    font-size: 22px;
+
+}
+
+.words4 {
+    font-size: 30px;
+}
+/*********** ITEM DETAILS ************/
+
+#sq{
+    margin-top: 100px;
+    margin-right: 100px;
+    text-align:center;
+    align-items:center;
+    height: 100px;
+
+}
+
+img {
+    height: 405px;
+    width: 1250;
+}
+
+.item {
+    border-radius: 50%;
+}
+
+#box2{
+    margin-top: 80px; 
+    display: flex;
+    text-align: center;
+    right: 170px;
+    position: absolute;
+    padding: 20px;
+}
+
+#box3{
+    margin-top: 35px; 
+    display: flex;
+    text-align: center;
+    right: 370px;
+    position: absolute;
+    padding: 20px;
+}
+
+.button3 {
+    background-color:tan;
     color: white;
+    padding: 15px 32px;
+    display: inline-block;
+    border: none;
+    border-radius: 20px;
+
 }
-h1 {
-    margin: 0;
+
+.button4 {
+    background-color: #B9A89B;
+    color: white;
+    padding: 15px 32px;
+    display: inline-block;
+    border: none;
+    border-radius: 1px;
+
 }
-/*********** LISTS ************/
-#todo-lists {
-    margin: 0 auto;
-    width: 80%;
-    padding-top: 10px;
-}
-.list {
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #eeeeee;
-    border: 1px solid #cccccc;
-}
-.list-title {
-    margin-left: 20px;
-}
+
+/*********** LOCATION PAGE ************/
+
+
+
+/*********** HEADER ************/
 
 header a {
-    color: gold;
+    color: sandybrown;
     text-decoration: none;
 }
-.list a {
-    color: teal;
-    text-decoration: none;
-}
+
     
 body {
     margin: 0;
-    color: teal;
-    font-family: &#39;Roboto&#39;, sans-serif;
+    color: saddlebrown;
+    font-family: Roboto; 
 }
-/*********** HEADER ************/
 header {
-    text-align: center;
+    text-align: left;
     padding: 10px;
-    background-color: teal;
+    background-color: white;
     color: white;
-    font-family: &#39;Roboto Slab&#39;, serif;
+    font-family: Roboto Slab;
 }
+
+ul {
+    white-space: nowrap;
+}
+
+ul, li {
+    list-style: none;
+    display: inline;
+}
+
+/*********** NAVIGATION BAR ************/
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+  
+  .topnav {
+    overflow: hidden;
+    background-color: white;
+    flex-direction:row;
+    display:flex;
+
+}
+
+  .topnav div{
+    display:flex;
+    flex-direction:row;
+}
+
+  .topnav div:last-of-type{
+    justify-self: end;
+    margin-left: auto;
+}
+  
+  .topnav a {
+    float: right;
+    color: saddlebrown;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .topnav span {
+      float: left;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+
+  }
+
+  .topnav img {
+    height: 40px;
+    width: 40px;
+    align-self: center;
+}
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: saddlebrown;
+  }
+  
+  .topnav a.active {
+    background-color: saddlebrown;
+    color: white;
+  }
+  
+.things {
+    align-self: end;
+}
+  
+/*********** FLEXBOX LAYOUTS ************/
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align:center;
+    flex-grow: 4;
+}
+​
+.flex-vertical-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align:center;
+}
+
+.pic{
+    width: 250px;
+    height: 250px;
+}
+​
+.new-button {
+    background-color:#C9895E;
+    color: white;
+    padding: 15px 32px;
+    display: inline-block;
+    border: none;
+    border-radius: 20px;
+}
+ 

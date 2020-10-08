@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Bun Bun Bake Shop</title>
+		<meta charset="UTF-8">
+	<!-- styles -->
+	<link rel = "stylesheet" type ="text/css" href="style.css">
+	<!-- fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto"
+	rel="stylesheet">
+
+
+	</head>
+	<body class="item">
+		<header>
+			<!-- Navigation Bar -->
+
+			<div class="topnav">	
+				<div>
+					<img src="logo.png" alt="brand" onclick="window.location.href='HomePage.html';">
+					<span class="stylish">Bun Bun Bake Shop</span>
+				</div>
+
+				<div class ="things">		
+					<a href="MenuPage.html">Menu</a>
+					<a href="LocationPage.html">Locations</a>
+					<a href="#aboutus">About Us </a>
+					<a class="active" href="#home">Order Now</a>
+					<img src="cart.png" alt="sh">
+				</div>	
+			</div>
+
+			</header>
+
+
+			<div id = "box2">
+				<div class="square">
+					<br>
+					<br>
+					<h1 class="words">Caramel Pecan Buns </h1>
+					<h3 class="words1">Our Caramel Pecan Buns are a go-to delight</h3>
+					<h3 class="words1">for any Pittsburghers who crave for sweetness.</h3>
+					<label> Price: $3 </label>
+					<br>
+					<br>
+
+					<!-- Quantity Dropdown -->
+
+					<form>
+						<label>Quantity:</label>
+						<select name="number" id="num">
+						  <option value="1">1</option>
+						  <option value="3">3</option>
+						  <option value="6">6</option>
+						  <option value="12">12</option>
+						</select>
+						<br>
+						<br>
+					  </form>
+
+					<!-- Glazing Dropdown -->
+
+					<form>
+						<label for="glaze">Glazing:</label>
+						<select name="gla" id="glaze">
+						  <option value="None">None</option>
+						  <option value="Sugar-Milk">Sugar-Milk</option>
+						  <option value="Vanilla-Milk">Vanilla-Milk</option>
+						  <option value="Double-Chocolate">Double-Chocolate</option>
+						</select>
+						<br><br>
+					  </form>
+
+		
+					<div class="flex-vertical-container">
+						<button type="button" class = "button">Add to Cart </button>
+						<button type="button" class = "button3">Buy Now </button> </div>
+						<br>
+						<br>
+				
+				</div>
+			</div>
+
+
+			<div id = "box3">
+				<button type="button" class = "button4" onclick="window.location.href='MenuPage.html';"><u>Return to Menu</u> </button>
+			</div>	
+	</body>
+</html>
