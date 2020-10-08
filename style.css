@@ -63,7 +63,7 @@ h1 {
 .square {
     background-color: #ffffff;
     border-radius: 15px;
-    border: 50px solid white;
+    border: 20px solid white;
 }
 
 .rr{
@@ -80,7 +80,6 @@ h1 {
 .words1 {
     color: sienna;
     font-size: 30px;
-
 }
 
 
@@ -139,7 +138,7 @@ img {
     margin-top: 35px; 
     display: flex;
     text-align: center;
-    right: 370px;
+    right: 470px;
     position: absolute;
     padding: 20px;
 }
