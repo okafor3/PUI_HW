@@ -5,13 +5,15 @@
 		<meta charset="UTF-8">
 	<!-- styles -->
 	<link rel = "stylesheet" type ="text/css" href="style.css">
+	<script type="text/javascript" src="main.js"></script>
 	<!-- fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto"
 	rel="stylesheet">
 
 
 	</head>
-	<body class="item">
+	<body onload="test123()" class="item">
+	
 		<header>
 			<!-- Navigation Bar -->
 
@@ -26,29 +28,32 @@
 					<a href="LocationPage.html">Locations</a>
 					<a href="#aboutus">About Us </a>
 					<a class="active" href="#home">Order Now</a>
-					<img src="cart.png" alt="sh">
+					<img src="cart.png" alt="sh" onclick="window.location.href='ShoppingCart.html';">
+					<a id="cartCount" href="ShoppingCart.html">0</a>		
 				</div>	
 			</div>
 
 			</header>
 
+			<!-- <h1 id="test2" class="words">Caramel Pecan Buns </h1> -->
+		
 
-			<div id = "box2">
+			<div class="box2" >
 				<div class="square">
 					<br>
+					<h1 id="productname" class = "words6"></h1>
+					<h2 id="productdesc" class = "words5"></h2>
+					<h2 id="productprice" class = "words_light"></h2>
+					<!-- <h1 id="textchange" onclick="myFunction()">Item Name</h1> -->
+					<!-- <h3 class="words3">Our Caramel Pecan Buns are a go-to delight for any Pittsburghers who crave a crispy treat.</h3> -->
+					<!-- <label> Price: $3 </label> -->
 					<br>
-					<h1 class="words">Caramel Pecan Buns </h1>
-					<h3 class="words1">Our Caramel Pecan Buns are a go-to delight</h3>
-					<h3 class="words1">for any Pittsburghers who crave for sweetness.</h3>
-					<label> Price: $3 </label>
-					<br>
-					<br>
-
+			
 					<!-- Quantity Dropdown -->
 
 					<form>
 						<label>Quantity:</label>
-						<select name="number" id="num">
+						<select id="num">
 						  <option value="1">1</option>
 						  <option value="3">3</option>
 						  <option value="6">6</option>
@@ -62,7 +67,7 @@
 
 					<form>
 						<label for="glaze">Glazing:</label>
-						<select name="gla" id="glaze">
+						<select id="glaze">
 						  <option value="None">None</option>
 						  <option value="Sugar-Milk">Sugar-Milk</option>
 						  <option value="Vanilla-Milk">Vanilla-Milk</option>
@@ -73,7 +78,8 @@
 
 		
 					<div class="flex-vertical-container">
-						<button type="button" class = "button">Add to Cart </button>
+						<!-- <button type="button" onclick="window.location.href='ShoppingCart.html';" class = "button">Add to Cart </button> -->
+						<input type="button" value="Add to Cart" onclick="addToCart()" class = "button">
 						<button type="button" class = "button3">Buy Now </button> </div>
 						<br>
 						<br>
@@ -82,8 +88,9 @@
 			</div>
 
 
-			<div id = "box3">
+			<div id = "box4">
 				<button type="button" class = "button4" onclick="window.location.href='MenuPage.html';"><u>Return to Menu</u> </button>
+
 			</div>	
 	</body>
 </html>

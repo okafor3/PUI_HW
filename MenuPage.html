@@ -5,13 +5,74 @@
 		<meta charset="UTF-8">
 	<!-- styles -->
 	<link rel = "stylesheet" type ="text/css" href="style.css">
+	<script type="text/javascript" src="main.js"></script>
 	<!-- fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto"
 	rel="stylesheet">
 
+	<script>
+		var title1 = {
+		  price: 6.25,
+		  name: "Original",
+		  id: "original",
+		  description: "Our Original Buns are a go-to delight for Pittsburghers who crave a sugary treat.",
+		  pic: "back1.png"
+		};
+	
+		var title2 = {
+		  price: 6.25,
+		  name: "Original (Gluten Free)",
+		  id: "gluten",
+		  description: "Our Gluten-Free Buns are a go-to delight for Pittsburghers who crave a healthy treat.",
+		  pic: "back2.png"
+
+		};
+
+		var title3 = {
+		  price: 3.75,
+		  name: "Blackberry",
+		  id: "blackberry",
+		  description: "Our Blackberry Buns are a go-to delight for Pittsburghers who crave sweetness.",
+		  pic: "back3.png"
+		};
+
+		var title4 = {
+		  price: 3.75,
+		  name: "Pumpkin Spice",
+		  id: "pumpkin",
+		  description: "Our Pumpkin Spice Buns are a go-to delight for Pittsburghers who crave an earthy tweet.",
+		  pic: "back4.png"
+		};
+
+		var title5 = {
+		  price: 6.25,
+		  name: "Walnut",
+		  id: "walnut",
+		  description: "Our Walnut Buns are a go-to delight for Pittsburghers who crave a crunchy treat.",
+		  pic: "back5.png"
+
+		};
+
+		var title6 = {
+		  price: 6.25,
+		  name: "Caramel Pecan",
+		  id: "pecan",
+		  description: "Our Caramel Pecan Buns are a go-to delight for Pittsburghers who crave a crispy treat.",
+		  pic: "back6.png"
+		};
+
+		localStorage.setItem(title1.id, JSON.stringify(title1));
+		localStorage.setItem(title2.id, JSON.stringify(title2));
+		localStorage.setItem(title3.id, JSON.stringify(title3));
+		localStorage.setItem(title4.id, JSON.stringify(title4));
+		localStorage.setItem(title5.id, JSON.stringify(title5));
+		localStorage.setItem(title6.id, JSON.stringify(title6));
+		
+	  </script>
+
 
 	</head>
-	<body>
+	<body onload="test123()">
 		<header>
 			<!-- Navigation Bar -->
 			<div class="topnav">	
@@ -25,7 +86,7 @@
 					<a href="LocationPage.html">Locations</a>
 					<a href="#aboutus">About Us </a>
 					<a class="active" href="#home">Order Now</a>
-					<img src="cart.png" alt="sh">
+					<img src="cart.png" alt="sh" onclick="window.location.href='ShoppingCart.html';">
 				</div>	
 			</div>
 
@@ -37,8 +98,8 @@
 				<img src="b1.png" alt="Pic1">
 				<div class="content">
 					<h1 class="words1">Bun Bun Bake Shop </h1>
-					<h3 class="words1">Try our premium cinnamon rolls</h3>
-					<h3 class="words1">made from fresh dough and spices!</h3>
+					<h3 class="words2">Try our premium cinnamon rolls</h3>
+					<h3 class="words2">made from fresh dough and spices!</h3>
 				</div>				
 			</div>
 
@@ -46,16 +107,22 @@
 			<!-- List of Menu Items-->
 
 			<!--First Row-->
-			<div id="place">
+			<div class="place">
 ​
 				<div class="flex-container">
 ​
 					<div class="flex-container">
 						<img src="circle_bun.png" alt ="bun" class="pic"/>
 						<div class="flex-vertical-container">
+							<!-- <h2 id="demo">Original</h2> -->
 							<h2>Original</h2>
-							<p>Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor </p>
-							<button type="button" class="button" onclick="window.location.href='ItemDetails.html';">Place Order</button>
+							<p>Our Original Buns are a go-to delight for Pittsburghers who crave a sugary treat. </p>
+							<h4>Price: $6.25</h4>
+							<a id="test" class="choose" onclick = "changeBackground()" href="ItemDetails.html?original">Place Order</a> 
+
+							<!-- <button type="button" id="test" class="button" href="ItemDetails.html?original">Place Order</button>  -->
+							<!-- <button type="button" class = "button" onclick="newPage(); myFunction()">Place Order</button> -->
+
 						</div>
 					</div>
 ​
@@ -63,8 +130,9 @@
 						<img src="circle_bun.png" alt ="bun" class="pic"/>
 						<div class="flex-vertical-container">
 							<h2>Original (Gluten-Free)</h2>
-							<p>Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor </p>
-							<button type="button" class="button" onclick="window.location.href='ItemDetails.html';">Place Order</button>
+							<p>Our Gluten-Free Buns are a go-to delight for Pittsburghers who crave a healthy treat. </p>
+							<h4>Price: $6.25</h4>
+							<a id="test" class="choose" href="ItemDetails.html?gluten">Place Order</a> 
 						</div>
 					</div>
 					
@@ -80,20 +148,22 @@
 				<div class="flex-container">
 				​
 						<div class="flex-container">
-							<img src="circle_bun.png" alt ="bun" class="pic"/>
+							<img src="circle_bun2.png" alt ="bun" class="pic2"/>
 							<div class="flex-vertical-container">
 								<h2>Blackberry</h2>
-								<p>Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor </p>
-								<button type="button" class = "button" onclick="window.location.href='ItemDetails.html';">Place Order</button>
+								<p>Our Blackberry Buns are a go-to delight for Pittsburghers who crave sweetness. </p>
+								<h4>Price: $3.75</h4>
+								<a id="test" class="choose" href="ItemDetails.html?blackberry">Place Order</a> 
 							</div>
 						</div>
 				​
 						<div class="flex-container">
-							<img src="circle_bun.png" alt ="bun" class="pic"/>
+							<img src="circle_bun2.png" alt ="bun" class="pic2"/>
 							<div class="flex-vertical-container">
 								<h2>Pumpkin Spice</h2>
-								<p>Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor </p>
-								<button type="button" class = "button" onclick="window.location.href='ItemDetails.html';">Place Order</button>
+								<p>Our Pumpkin Spice Buns are a go-to delight for Pittsburghers who crave an earthy tweet. </p>
+								<h4>Price: $3.75</h4>
+								<a id="test" class="choose" href="ItemDetails.html?pumpkin">Place Order</a> 
 							</div>
 						</div>
 										
@@ -108,8 +178,9 @@
 							<img src="circle_bun.png" alt ="bun" class="pic"/>
 							<div class="flex-vertical-container">
 								<h2>Walnut</h2>
-								<p>Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor </p>
-								<button type="button" class = "button" onclick="window.location.href='ItemDetails.html';">Place Order</button>
+								<p>Our Walnut Buns are a go-to delight for Pittsburghers who crave a crunchy treat. </p>
+								<h4>Price: $6.25</h4>
+								<a id="test" class="choose" href="ItemDetails.html?walnut">Place Order</a> 
 							</div>
 						</div>
 				​
@@ -117,8 +188,10 @@
 							<img src="circle_bun.png" alt ="bun" class="pic"/>
 							<div class="flex-vertical-container">
 								<h2>Caramel Pecan</h2>
-								<p>Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor </p>
-								<button type="button" class = "button" onclick="window.location.href='ItemDetails.html';">Place Order</button>
+								<p>Our Caramel Pecan Buns are a go-to delight for Pittsburghers who crave a crispy treat. </p>
+								<h4>Price: $6.25</h4>
+								<a id="test" class="choose" href="ItemDetails.html?pecan">Place Order</a> 
+								<!-- <button type="button" class = "button" onclick="window.location.href='ItemDetails.html';">Place Order</button> -->
 							</div>
 						</div>
 										
