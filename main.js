@@ -45,6 +45,13 @@ function addToCart(){
 //   document.body.style.backgroundImage = "url('back1.png')";
 // }
 
+// function backTwo() {
+//   document.body.style.backgroundImage = "url('back2.png')";
+// }
+
+// function backThree() {
+//   document.body.style.backgroundImage = "url('back3.png')";
+// }
 
 function updateCartNumber(num) {
   var cartCount = document.getElementById("cartCount")
@@ -53,7 +60,6 @@ function updateCartNumber(num) {
 }
 
 function test123() {
-  document.body.style.backgroundImage = "url('back1.png')";
   var link = window.location.href;
   console.log(link);
   var linkparts = link.split("?");
@@ -70,7 +76,61 @@ function test123() {
     document.getElementById("productdesc").innerHTML =
       "<br/>" + more.description;
   }
+
+  if (more.name=="Original"){
+    document.body.style.backgroundImage = "url('back1.png')";
+  }
+  if (more.name=="Original Gluten Free"){
+    document.body.style.backgroundImage = "url('back2.png')";
+  }
+  if (more.name=="Blackberry"){
+    document.body.style.backgroundImage = "url('back3.png')";
+  }
+  if (more.name=="Pumpkin Spice"){
+    document.body.style.backgroundImage = "url('back4.png')";
+  }
+  if (more.name=="Walnut"){
+    document.body.style.backgroundImage = "url('back5.png')";
+  }
+  if (more.name=="Caramel Pecan"){
+    document.body.style.backgroundImage = "url('back6.png')";
+  }
 }
+
+
+function updateCart(){
+  var link = window.location.href;
+  console.log(link);
+  var linkparts = link.split("?");
+  if (linkparts.length == 2) {
+    var info1 = linkparts[1];
+    var more1 = JSON.parse(localStorage.getItem(info1));
+  
+    console.log(more1);
+  
+    document.getElementById("productname1").innerHTML = more1.name;
+
+  }
+  if (more1.name=="Original"){
+    document.body.style.backgroundImage = "url('back1.png')";
+  }
+  if (more1.name=="Original Gluten Free"){
+    document.body.style.backgroundImage = "url('back2.png')";
+  }
+  if (more1.name=="Blackberry"){
+    document.body.style.backgroundImage = "url('back3.png')";
+  }
+  if (more1.name=="Pumpkin Spice"){
+    document.body.style.backgroundImage = "url('back4.png')";
+  }
+  if (more1.name=="Walnut"){
+    document.body.style.backgroundImage = "url('back5.png')";
+  }
+  if (more1.name=="Caramel Pecan"){
+    document.body.style.backgroundImage = "url('back6.png')";
+  }
+}
+
 // function checkoutPage{
 //   localStorage.
 //   //load that new HTML page

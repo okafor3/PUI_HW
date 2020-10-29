@@ -6,18 +6,13 @@ header {
     
     body {
         margin: 0;
-        background-color: navajowhite;
+        background-color:navajowhite;
     }
     
-     .home {
+    .home {
         background-image: url('background.png');
     }
-     
-    .item{
-        background-image: url('back1.png');
-    } 
-
-
+    
     .stylish {
         font-weight: bold;
         color: saddlebrown;
