@@ -59,7 +59,7 @@ function updateCartNumber(num) {
 
 }
 
-function test123() {
+function copyText() {
   var link = window.location.href;
   console.log(link);
   var linkparts = link.split("?");

@@ -17,7 +17,10 @@ header {
         font-weight: bold;
         color: saddlebrown;
       }
-    
+    .item {
+        background-image: url('back1.png');
+    }
+
     .button {
         background-color: #C9895E;
         color: white;
@@ -41,7 +44,6 @@ header {
         background-color: #F8F5EE;
         padding: 15px 50px;
         border-radius: 1px;
-        border-color: #F8F5EE;
         border: none;
 
     
@@ -85,13 +87,6 @@ header {
         justify-content: center;
         align-items: center;
         line-height: 200%;
-    }
-
-    #box3{
-        height: 80px;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
     }
 
     #box4{
@@ -199,7 +194,6 @@ header {
     
     img {
         height: 405px;
-        width: 1250;
     }
     
     .item {
@@ -224,6 +218,14 @@ header {
         padding: 20px;
     }
     
+    #box5{
+        margin-top: 120px; 
+        display: flex;
+        text-align: center;
+        right: 345px;
+        position: absolute;
+        padding: 20px;
+    }
     .button3 {
         background-color:tan;
         color: white;
@@ -344,6 +346,7 @@ header {
         display: flex;
         flex-direction: row;
         text-align: center;
+        justify-content: center;
         flex-grow: 4;
     }
     ​
@@ -410,7 +413,7 @@ header {
         border-radius: 20px;
     }
      
-    .ije {
+    .small_circle {
         height: 100px;
         width: 100px;
     }
