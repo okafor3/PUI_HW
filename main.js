@@ -22,42 +22,60 @@ class Product{
   }
 }
 
-function addToCart(){
-  var price = document.getElementById("productprice").value
-  var quantity = document.getElementById("num").value
-  //alert('selected the quantity:' + quantity)
-  //alert('selected the price:' + price)
-  var glazing = document.getElementById("glaze").value
+// function addToCart(){
+//   var price = document.getElementById("productprice").value
+//   var quantity = document.getElementById("num").value
+//   //alert('selected the quantity:' + quantity)
+//   //alert('selected the price:' + price)
+//   var glazing = document.getElementById("glaze").value
 
-  var shop = new Product(price, quantity, glazing)
+//   var shop = new Product(price, quantity, glazing)
 
-  productArr.push(shop)
+//   productArr.push(shop)
 
-  updateCartNumber(productArr.length)
+//   updateCartNumber(productArr.length)
 
-  //var quantCount = float(quantity)
+//   //var quantCount = float(quantity)
 
-  //console.log("Here's the productArr:")
-  //console.log(productArr)
-}
-
-// function changeBackground(){
-//   document.body.style.backgroundImage = "url('back1.png')";
+//   //console.log("Here's the productArr:")
+//   //console.log(productArr)
 // }
 
-// function backTwo() {
-//   document.body.style.backgroundImage = "url('back2.png')";
-// }
+function addcurcaketocart() {
+  var price = document.getElementById("productprice").value;
+  var quantity = document.getElementById("num").value;
+  var glazing = document.getElementById("glaze").value;
+  var shop = new Product(price, quantity, glazing);
+  productArr.push(shop);
+  //updateCartNumber(productArr.length);
 
-// function backThree() {
-//   document.body.style.backgroundImage = "url('back3.png')";
-// }
-
-function updateCartNumber(num) {
   var cartCount = document.getElementById("cartCount")
-  cartCount.innerHTML = num
+  cartCount.innerHTML = productArr.length
 
+  var cart = JSON.parse(localStorage.getItem("cart") || "{}");
+  var cakeflavor = document.getElementById("cars").value;
+  console.log(cakeflavor);
+  var cake = JSON.parse(localStorage.getItem(curcakeid));
+  cake["flavor"] = cakeflavor;
+
+
+  //to add a specific item to cart count
+  if (curcakeid in cart) {
+    cart[curcakeid] += 1;
+  } else {
+    cart[curcakeid] = 1;
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+  console.log(cart);
+  
+  loadCart()
 }
+
+  
+// function updateCartNumber(num) {
+//   var cartCount = document.getElementById("cartCount")
+//   cartCount.innerHTML = num
+// }
 
 function copyText() {
   var link = window.location.href;
@@ -75,7 +93,7 @@ function copyText() {
       "<br/> Price: $" + more.price;
     document.getElementById("productdesc").innerHTML =
       "<br/>" + more.description;
-  }
+  
 
   if (more.name=="Original"){
     document.body.style.backgroundImage = "url('back1.png')";
@@ -95,49 +113,55 @@ function copyText() {
   if (more.name=="Caramel Pecan"){
     document.body.style.backgroundImage = "url('back6.png')";
   }
+
+  // if (more.name=="Original"){
+  //   <input type="button" onclick="addCount('Original')" value="Add to Cart - Original"/>;
+  // }
+  // if (more.name=="Original Gluten Free"){
+  //   <input type="button" onclick="addCount('Original')" value="Add to Cart - Original Gluten Free"/>;
+  // }
+  // if (more.name=="Blackberry"){
+  //   <input type="button" onclick="addCount('Original')" value="Add to Cart - Blackberry"/>;
+  // }
+  // if (more.name=="Pumpkin Spice"){
+  //   <input type="button" onclick="addCount('Original')" value="Add to Cart - Pumpkin Spice"/>;
+  // }
+  // if (more.name=="Walnut"){
+  //   <input type="button" onclick="addCount('Original')" value="Add to Cart - Walnut"/>;
+  // }
+  // if (more.name=="Caramel Pecan"){
+  //   <input type="button" onclick="addCount('Original')" value="Add to Cart - Caramel Pecan"/>;
+  // }
 }
 
-
-function updateCart(){
-  var link = window.location.href;
-  console.log(link);
-  var linkparts = link.split("?");
-  if (linkparts.length == 2) {
-    var info1 = linkparts[1];
-    var more1 = JSON.parse(localStorage.getItem(info1));
-  
-    console.log(more1);
-  
-    document.getElementById("productname1").innerHTML = more1.name;
-
-  }
-  if (more1.name=="Original"){
-    document.body.style.backgroundImage = "url('back1.png')";
-  }
-  if (more1.name=="Original Gluten Free"){
-    document.body.style.backgroundImage = "url('back2.png')";
-  }
-  if (more1.name=="Blackberry"){
-    document.body.style.backgroundImage = "url('back3.png')";
-  }
-  if (more1.name=="Pumpkin Spice"){
-    document.body.style.backgroundImage = "url('back4.png')";
-  }
-  if (more1.name=="Walnut"){
-    document.body.style.backgroundImage = "url('back5.png')";
-  }
-  if (more1.name=="Caramel Pecan"){
-    document.body.style.backgroundImage = "url('back6.png')";
-  }
-}
-
-// function checkoutPage{
-//   localStorage.
-//   //load that new HTML page
-//   //do stuff with productArr
+// function loadCart() {
+//   var cart = JSON.parse(localStorage.getItem("cart") || "{}");
+//   console.log(cart);
+//   var cartinfo = "";
+//   for (var productid in cart) {
+//     // check if the property/key is defined in the object itself, not in parent
+//     if (cart.hasOwnProperty(productid)) {
+//       console.log(productid, cart[productid]);
+//       cartinfo += productid + " : " + cart[productid] + "<br/>";
+//     }
+//     document.getElementById("cartinfo").innerHTML = cartinfo;
+    
+//     document.getElementById("cartCount").innerHTML = 10;
+//   }
 // }
-
-//json takes an object or a list of objects
-//makes them into a string, including all the attribuutes
-//you then pass this string to another page (via several methods)
-//then that receiving page decodes the string and makes it back into an object
+function loadCart() { 
+  var cart = JSON.parse(localStorage.getItem("cart") || "{}");
+  console.log(cart);
+  var cartCount = 0;
+  var cartinfo = ""; 
+  for (var productid in cart) {   
+    if (cart.hasOwnProperty(productid)) {
+      console.log(productid, cart[productid]);
+      cartinfo += productid + " : " + cart[productid] + "<br/>";
+      //cartCount += cart[productid];
+      cartCount += 1;
+    }
+    document.getElementById("cartinfo").innerHTML = cartinfo;
+  } 
+  document.getElementById("cartCount").innerHTML = cartCount;
+}

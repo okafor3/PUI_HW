@@ -53,12 +53,25 @@
 		  description: "Our Caramel Pecan Buns are a go-to delight for Pittsburghers who crave a crispy treat."
 		};
 
+		var cart = JSON.parse(localStorage.getItem("cart") || "{}");
+		console.log(cart);
+
 		localStorage.setItem(title1.id, JSON.stringify(title1));
 		localStorage.setItem(title2.id, JSON.stringify(title2));
 		localStorage.setItem(title3.id, JSON.stringify(title3));
 		localStorage.setItem(title4.id, JSON.stringify(title4));
 		localStorage.setItem(title5.id, JSON.stringify(title5));
 		localStorage.setItem(title6.id, JSON.stringify(title6));
+
+		function addCount(cakeid) {
+			if (cakeid in cart) {
+				cart[cakeid] += 1;
+			} else {
+				cart[cakeid] = 1;
+			}
+			localStorage.setItem("cart", JSON.stringify(cart));
+			console.log(cart);
+			}
 		
 	  </script>
 
@@ -188,6 +201,23 @@
 						</div>
 										
 				</div>
+
+				<!-- <div>
+					<h1></h1>
+					<input type="button" onclick="addCount('Original')" value="Add to Cart - Original"/>
+
+					<input type="button" onclick="addCount('Original Gluten Free')"value="Add to Cart - Original Gluten Free"/>
+
+					<input type="button" onclick="addCount('Blackberry')" value="Add to Cart - Blackberry"/>
+
+					<input type="button" onclick="addCount('Pumpkin')" value="Add to Cart - Pumpkin"/>
+					
+					<input type="button" onclick="addCount('Walnut')" value="Add to Cart - Walnut"/>
+
+					<input type="button" onclick="addCount('Caramel Pecan')" value="Add to Cart - Caramel Pecan"/>
+
+					<a href="ShoppingCart.html">cart page</a>
+				</div> -->
 					
 	</body>
 </html>

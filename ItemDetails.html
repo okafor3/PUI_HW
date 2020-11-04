@@ -47,13 +47,26 @@
 		  id: "pecan_cart",
 		};
 
+		var cart = JSON.parse(localStorage.getItem("cart") || "{}");
+		console.log(cart);
+		
 		localStorage.setItem(title6.id, JSON.stringify(title6));
 		localStorage.setItem(title7.id, JSON.stringify(title7));
 		localStorage.setItem(title8.id, JSON.stringify(title8));
 		localStorage.setItem(title9.id, JSON.stringify(title9));
 		localStorage.setItem(title10.id, JSON.stringify(title10));
 		localStorage.setItem(title11.id, JSON.stringify(title11));
-		
+
+		function addCount(cakeid) {
+			if (cakeid in cart) {
+				cart[cakeid] += 1;
+			} else {
+				cart[cakeid] = 1;
+			}
+			localStorage.setItem("cart", JSON.stringify(cart));
+			console.log(cart);
+			}
+			
 	</script>
 
 	</head>
@@ -124,10 +137,32 @@
 		
 					<div class="flex-vertical-container">
 						<!-- <button type="button" onclick="window.location.href='ShoppingCart.html';" class = "button">Add to Cart </button> -->
-						<input type="button" value="Add to Cart" onclick="addToCart()" class = "button">
-						<button type="button" class = "button3">Buy Now </button> </div>
-						<br>
-						<br>
+						<!-- <input type="button" value="Add to Cart" onclick="addToCart()" class = "button"> -->
+
+						<input type="button" onclick="addcurcaketocart()" value="Add to Cart"/>
+						<button type="button" class = "button3">Buy Now </button> 
+					</div>
+					<br>
+					<br>
+					<div>
+						<h1></h1>
+						<input type="button" onclick="addCount('Original')" value="Add to Cart - Original"/>
+	
+						<input type="button" onclick="addCount('Original Gluten Free')"value="Add to Cart - Original Gluten Free"/>
+	
+						<input type="button" onclick="addCount('Blackberry')" value="Add to Cart - Blackberry"/>
+	
+						<input type="button" onclick="addCount('Pumpkin')" value="Add to Cart - Pumpkin"/>
+						
+						<input type="button" onclick="addCount('Walnut')" value="Add to Cart - Walnut"/>
+	
+						<input type="button" onclick="addCount('Caramel Pecan')" value="Add to Cart - Caramel Pecan"/>
+	
+						<!-- <a href="ShoppingCart.html">cart page</a> -->
+					</div>
+
+
+
 				
 				</div>
 			</div>
