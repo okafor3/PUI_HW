@@ -41,7 +41,7 @@ class Product{
 //   //console.log(productArr)
 // }
 
-function addcurcaketocart() {
+function addcurcaketocart(curcakeid) {
   var price = document.getElementById("productprice").value;
   var quantity = document.getElementById("num").value;
   var glazing = document.getElementById("glaze").value;
@@ -58,8 +58,6 @@ function addcurcaketocart() {
   var cake = JSON.parse(localStorage.getItem(curcakeid));
   cake["flavor"] = cakeflavor;
 
-
-  //to add a specific item to cart count
   if (curcakeid in cart) {
     cart[curcakeid] += 1;
   } else {
@@ -67,11 +65,9 @@ function addcurcaketocart() {
   }
   localStorage.setItem("cart", JSON.stringify(cart));
   console.log(cart);
-  
-  loadCart()
 }
 
-  
+
 // function updateCartNumber(num) {
 //   var cartCount = document.getElementById("cartCount")
 //   cartCount.innerHTML = num
@@ -94,7 +90,6 @@ function copyText() {
     document.getElementById("productdesc").innerHTML =
       "<br/>" + more.description;
   
-
   if (more.name=="Original"){
     document.body.style.backgroundImage = "url('back1.png')";
   }
@@ -113,55 +108,23 @@ function copyText() {
   if (more.name=="Caramel Pecan"){
     document.body.style.backgroundImage = "url('back6.png')";
   }
+}  
 
-  // if (more.name=="Original"){
-  //   <input type="button" onclick="addCount('Original')" value="Add to Cart - Original"/>;
-  // }
-  // if (more.name=="Original Gluten Free"){
-  //   <input type="button" onclick="addCount('Original')" value="Add to Cart - Original Gluten Free"/>;
-  // }
-  // if (more.name=="Blackberry"){
-  //   <input type="button" onclick="addCount('Original')" value="Add to Cart - Blackberry"/>;
-  // }
-  // if (more.name=="Pumpkin Spice"){
-  //   <input type="button" onclick="addCount('Original')" value="Add to Cart - Pumpkin Spice"/>;
-  // }
-  // if (more.name=="Walnut"){
-  //   <input type="button" onclick="addCount('Original')" value="Add to Cart - Walnut"/>;
-  // }
-  // if (more.name=="Caramel Pecan"){
-  //   <input type="button" onclick="addCount('Original')" value="Add to Cart - Caramel Pecan"/>;
-  // }
-}
-
-// function loadCart() {
+// function loadCart() { 
 //   var cart = JSON.parse(localStorage.getItem("cart") || "{}");
 //   console.log(cart);
-//   var cartinfo = "";
-//   for (var productid in cart) {
-//     // check if the property/key is defined in the object itself, not in parent
+//   var cartCount = 0;
+//   var cartinfo = ""; 
+//   for (var productid in cart) {   
 //     if (cart.hasOwnProperty(productid)) {
 //       console.log(productid, cart[productid]);
 //       cartinfo += productid + " : " + cart[productid] + "<br/>";
+//       //cartCount += cart[productid];
+//       cartCount += 1;
 //     }
 //     document.getElementById("cartinfo").innerHTML = cartinfo;
-    
-//     document.getElementById("cartCount").innerHTML = 10;
 //   }
+//   document.getElementById("cartCount").innerHTML = cartCount;
 // }
-function loadCart() { 
-  var cart = JSON.parse(localStorage.getItem("cart") || "{}");
-  console.log(cart);
-  var cartCount = 0;
-  var cartinfo = ""; 
-  for (var productid in cart) {   
-    if (cart.hasOwnProperty(productid)) {
-      console.log(productid, cart[productid]);
-      cartinfo += productid + " : " + cart[productid] + "<br/>";
-      //cartCount += cart[productid];
-      cartCount += 1;
-    }
-    document.getElementById("cartinfo").innerHTML = cartinfo;
-  } 
-  document.getElementById("cartCount").innerHTML = cartCount;
-}
+
+

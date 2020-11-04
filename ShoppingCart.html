@@ -9,9 +9,29 @@
 	<script type="text/javascript" src="main.js"></script>
 	<!-- fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
-
 </head>
+
+<script>
+    function loadCart() {
+      var cart = JSON.parse(localStorage.getItem("cart") || "{}");
+      console.log(cart);
+      var cartinfo = "";
+      for (var productid in cart) {
+        // check if the property/key is defined in the object itself, not in parent
+        if (cart.hasOwnProperty(productid)) {
+          console.log(productid, cart[productid]);
+          cartinfo += productid + " : " + cart[productid] + "<br/>";
+        }
+        document.getElementById("cartinfo").innerHTML = cartinfo;
+      }
+    }
+
+    function clearCart() {
+      //reset the cart.
+      cart = {};
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+  </script>
 
 <body class="item" onload="loadCart()">
 	<header>
