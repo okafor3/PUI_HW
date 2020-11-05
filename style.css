@@ -210,10 +210,10 @@ header {
     }
     
     #box3{
-        margin-top: 35px; 
+        margin-top: 52px; 
         display: flex;
         text-align: center;
-        right: 345px;
+        right: 375px;
         position: absolute;
         padding: 20px;
     }
@@ -242,6 +242,16 @@ header {
         color: white;
         padding: 15px 15px;
         border: none;
+    }
+
+    .button5 {
+        background-color: #B9A89B;
+        color: white;
+        padding: 15px 32px;
+        display: inline-block;
+        border: none;
+        border-radius: 20px;
+    
     }
     
     /*********** LOCATION PAGE ************/
