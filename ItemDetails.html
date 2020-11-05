@@ -24,13 +24,13 @@
 		};
 
 		var title9 = {
-		  price: 3.75,
+		  price: 6.25,
 		  name: "Blackberry",
 		  id: "blackberry_cart",
 		};
 
 		var title10 = {
-		  price: 3.75,
+		  price: 6.25,
 		  name: "Pumpkin Spice",
 		  id: "pumpkin_cart",
 		};
@@ -50,12 +50,12 @@
 		var cart = JSON.parse(localStorage.getItem("cart") || "{}");
 		console.log(cart);
 		
-		localStorage.setItem(title6.id, JSON.stringify(title6));
 		localStorage.setItem(title7.id, JSON.stringify(title7));
 		localStorage.setItem(title8.id, JSON.stringify(title8));
 		localStorage.setItem(title9.id, JSON.stringify(title9));
 		localStorage.setItem(title10.id, JSON.stringify(title10));
 		localStorage.setItem(title11.id, JSON.stringify(title11));
+		localStorage.setItem(title12.id, JSON.stringify(title12));
 
 		function addCount(cakeid) {
 			if (cakeid in cart) {
@@ -137,9 +137,9 @@
 		
 					<div class="flex-vertical-container">
 						<!-- <button type="button" onclick="window.location.href='ShoppingCart.html';" class = "button">Add to Cart </button> -->
-						<!-- <input type="button" value="Add to Cart" onclick="addToCart()" class = "button"> -->
+						<input type="button" value="Add to Cart" onclick="addToCart()" class = "button">
 
-						<input type="button" onclick="addcurcaketocart()" value="Add to Cart"/>
+						<!-- <input type="button" onclick="addcurcaketocart()" value="Add to Cart"/> -->
 						<button type="button" class = "button3">Buy Now </button> 
 					</div>
 					<br>

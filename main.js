@@ -1,57 +1,44 @@
 function newPage() {
-  window.location.assign("file:///Users/okafor3/Desktop/PUI/HW/homework_5/ItemDetails.html")
+  window.location.assign("file:///Users/okafor3/Desktop/PUI/HW/homework_5/ItemDetails.html");
   // window.location.href='ItemDetails.html';
-}
-
-function myFunction() {
-  document.getElementById("textchange").innerHTML= "Original"
-  //document.getElementById("textchange").innerHTML= document.getElementById("demo").innerHTML;
 }
 
 var productArr = []
 
 class Product{
   constructor (price,quantity,glazing){
-    this.price = price
-    this.quantity = quantity
-    this.glazing = glazing
-  }
-
-  getTotal (){
-    return this.price * this.quantity
+    this.price = price;
+    this.quantity = quantity;
+    this.glazing = glazing;
   }
 }
 
-// function addToCart(){
-//   var price = document.getElementById("productprice").value
-//   var quantity = document.getElementById("num").value
-//   //alert('selected the quantity:' + quantity)
-//   //alert('selected the price:' + price)
-//   var glazing = document.getElementById("glaze").value
-
-//   var shop = new Product(price, quantity, glazing)
-
-//   productArr.push(shop)
-
-//   updateCartNumber(productArr.length)
-
-//   //var quantCount = float(quantity)
-
-//   //console.log("Here's the productArr:")
-//   //console.log(productArr)
-// }
-
-function addcurcaketocart(curcakeid) {
+function addToCart(){
   var price = document.getElementById("productprice").value;
   var quantity = document.getElementById("num").value;
+  //alert('selected the quantity:' + quantity)
+  //alert('selected the price:' + price)
   var glazing = document.getElementById("glaze").value;
+
   var shop = new Product(price, quantity, glazing);
+
   productArr.push(shop);
-  //updateCartNumber(productArr.length);
 
-  var cartCount = document.getElementById("cartCount")
-  cartCount.innerHTML = productArr.length
+  updateCartNumber(productArr.length);
 
+  //var quantCount = float(quantity)
+
+  //console.log("Here's the productArr:")
+  console.log(productArr);
+}
+
+function addcurcaketocart(curcakeid) {
+  // var price = document.getElementById("productprice").value;
+  // var quantity = document.getElementById("num").value;
+  // var glazing = document.getElementById("glaze").value;
+  // var shop = new Product(price, quantity, glazing);
+  // productArr.push(shop);
+  // updateCartNumber(productArr.length);
   var cart = JSON.parse(localStorage.getItem("cart") || "{}");
   var cakeflavor = document.getElementById("cars").value;
   console.log(cakeflavor);
@@ -60,7 +47,8 @@ function addcurcaketocart(curcakeid) {
 
   if (curcakeid in cart) {
     cart[curcakeid] += 1;
-  } else {
+  } 
+  else {
     cart[curcakeid] = 1;
   }
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -68,10 +56,10 @@ function addcurcaketocart(curcakeid) {
 }
 
 
-// function updateCartNumber(num) {
-//   var cartCount = document.getElementById("cartCount")
-//   cartCount.innerHTML = num
-// }
+function updateCartNumber(num) {
+  var cartCount = document.getElementById("cartCount")
+  cartCount.innerHTML = num
+}
 
 function copyText() {
   var link = window.location.href;
@@ -89,42 +77,24 @@ function copyText() {
       "<br/> Price: $" + more.price;
     document.getElementById("productdesc").innerHTML =
       "<br/>" + more.description;
-  
-  if (more.name=="Original"){
-    document.body.style.backgroundImage = "url('back1.png')";
   }
-  if (more.name=="Original Gluten Free"){
-    document.body.style.backgroundImage = "url('back2.png')";
-  }
-  if (more.name=="Blackberry"){
-    document.body.style.backgroundImage = "url('back3.png')";
-  }
-  if (more.name=="Pumpkin Spice"){
-    document.body.style.backgroundImage = "url('back4.png')";
-  }
-  if (more.name=="Walnut"){
-    document.body.style.backgroundImage = "url('back5.png')";
-  }
-  if (more.name=="Caramel Pecan"){
-    document.body.style.backgroundImage = "url('back6.png')";
-  }
-}  
+}
 
-// function loadCart() { 
-//   var cart = JSON.parse(localStorage.getItem("cart") || "{}");
-//   console.log(cart);
-//   var cartCount = 0;
-//   var cartinfo = ""; 
-//   for (var productid in cart) {   
-//     if (cart.hasOwnProperty(productid)) {
-//       console.log(productid, cart[productid]);
-//       cartinfo += productid + " : " + cart[productid] + "<br/>";
-//       //cartCount += cart[productid];
-//       cartCount += 1;
-//     }
-//     document.getElementById("cartinfo").innerHTML = cartinfo;
+//   if (more.name=="Original"){
+//     document.body.style.backgroundImage = "url('back1.png')";
 //   }
-//   document.getElementById("cartCount").innerHTML = cartCount;
-// }
-
-
+//   if (more.name=="Original Gluten Free"){
+//     document.body.style.backgroundImage = "url('back2.png')";
+//   }
+//   if (more.name=="Blackberry"){
+//     document.body.style.backgroundImage = "url('back3.png')";
+//   }
+//   if (more.name=="Pumpkin Spice"){
+//     document.body.style.backgroundImage = "url('back4.png')";
+//   }
+//   if (more.name=="Walnut"){
+//     document.body.style.backgroundImage = "url('back5.png')";
+//   }
+//   if (more.name=="Caramel Pecan"){
+//     document.body.style.backgroundImage = "url('back6.png')";
+//   }

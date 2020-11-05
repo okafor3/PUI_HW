@@ -26,14 +26,14 @@
 		};
 
 		var title3 = {
-		  price: 3.75,
+		  price: 6.25,
 		  name: "Blackberry",
 		  id: "blackberry",
 		  description: "Our Blackberry Buns are a go-to delight for Pittsburghers who crave sweetness."
 		};
 
 		var title4 = {
-		  price: 3.75,
+		  price: 6.25,
 		  name: "Pumpkin Spice",
 		  id: "pumpkin",
 		  description: "Our Pumpkin Spice Buns are a go-to delight for Pittsburghers who crave an earthy tweet."
@@ -62,20 +62,8 @@
 		localStorage.setItem(title4.id, JSON.stringify(title4));
 		localStorage.setItem(title5.id, JSON.stringify(title5));
 		localStorage.setItem(title6.id, JSON.stringify(title6));
-
-		function addCount(cakeid) {
-			if (cakeid in cart) {
-				cart[cakeid] += 1;
-			} else {
-				cart[cakeid] = 1;
-			}
-			localStorage.setItem("cart", JSON.stringify(cart));
-			console.log(cart);
-			}
-		
 	  </script>
-
-
+	  
 	</head>
 	<body onload="copyText()">
 		<header>
@@ -153,21 +141,21 @@
 				<div class="flex-container">
 				​
 						<div class="flex-container">
-							<img src="circle_bun2.png" alt ="bun" class="pic2"/>
+							<img src="circle_bun.png" alt ="bun" class="pic2"/>
 							<div class="flex-vertical-container">
 								<h2>Blackberry</h2>
 								<p>Our Blackberry Buns are a go-to delight for Pittsburghers who crave sweetness. </p>
-								<h4>Price: $3.75</h4>
+								<h4>Price: $6.25</h4>
 								<a id="test3" class="choose" href="ItemDetails.html?blackberry">Place Order</a> 
 							</div>
 						</div>
 				​
 						<div class="flex-container">
-							<img src="circle_bun2.png" alt ="bun" class="pic2"/>
+							<img src="circle_bun.png" alt ="bun" class="pic2"/>
 							<div class="flex-vertical-container">
 								<h2>Pumpkin Spice</h2>
 								<p>Our Pumpkin Spice Buns are a go-to delight for Pittsburghers who crave an earthy tweet. </p>
-								<h4>Price: $3.75</h4>
+								<h4>Price: $6.25</h4>
 								<a id="test4" class="choose" href="ItemDetails.html?pumpkin">Place Order</a> 
 							</div>
 						</div>
@@ -201,23 +189,5 @@
 						</div>
 										
 				</div>
-
-				<!-- <div>
-					<h1></h1>
-					<input type="button" onclick="addCount('Original')" value="Add to Cart - Original"/>
-
-					<input type="button" onclick="addCount('Original Gluten Free')"value="Add to Cart - Original Gluten Free"/>
-
-					<input type="button" onclick="addCount('Blackberry')" value="Add to Cart - Blackberry"/>
-
-					<input type="button" onclick="addCount('Pumpkin')" value="Add to Cart - Pumpkin"/>
-					
-					<input type="button" onclick="addCount('Walnut')" value="Add to Cart - Walnut"/>
-
-					<input type="button" onclick="addCount('Caramel Pecan')" value="Add to Cart - Caramel Pecan"/>
-
-					<a href="ShoppingCart.html">cart page</a>
-				</div> -->
-					
 	</body>
 </html>

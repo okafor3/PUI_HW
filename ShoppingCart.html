@@ -12,24 +12,39 @@
 </head>
 
 <script>
-    function loadCart() {
-      var cart = JSON.parse(localStorage.getItem("cart") || "{}");
-      console.log(cart);
-      var cartinfo = "";
-      for (var productid in cart) {
-        // check if the property/key is defined in the object itself, not in parent
-        if (cart.hasOwnProperty(productid)) {
-          console.log(productid, cart[productid]);
-          cartinfo += productid + " : " + cart[productid] + "<br/>";
-        }
-        document.getElementById("cartinfo").innerHTML = cartinfo;
-      }
-    }
+
+	function loadCart() { 
+		var cart = JSON.parse(localStorage.getItem("cart") || "{}");
+		console.log(cart);
+		var cartCount = 0;
+		var cartinfo = ""; 
+		var priceinput = "";
+		var price = 0;
+		for (var productid in cart) {   
+			if (cart.hasOwnProperty(productid)) {
+			console.log(productid, cart[productid]);
+			price = cart[productid] * 6.25;
+			cartinfo += productid + " : " +cart[productid] + "<br/>";
+			priceinput += "$"+ price+"<br/>";
+			//cartCount += cart[productid];
+			cartCount += 1;
+			}
+			document.getElementById("cartinfo").innerHTML = cartinfo;
+			document.getElementById("priceinput").innerHTML = priceinput;
+
+			console.log(price)
+		}
+
+		document.getElementById("cartCount").innerHTML = cartCount;
+
+	
+	}
 
     function clearCart() {
-      //reset the cart.
+	  //reset the cart.
+	  alert("Your cart has been cleared! Please refresh the page.");
       cart = {};
-      localStorage.setItem("cart", JSON.stringify(cart));
+	  localStorage.setItem("cart", JSON.stringify(cart));
     }
   </script>
 
@@ -66,7 +81,7 @@
 
                 <img src="plain.png" class="small_circle" alt="bun"/>
 				<div class="flavor">
-					<h5>Item(s)</h5>
+					<h5>Item(s) / # of Orders </h5>
 				</div>
 
 				<div class="">
@@ -85,31 +100,17 @@
 				</div>
 
 
-				<div class="">
-					<h3>3</h3>
-				</div>
-
-				<div class="">
-					<h3>$13.50</h3>
-				</div>
-
-				<!--Second Row-->
-				<!-- <img src="circle_white.png" class="small_circle" alt="bun" />
 				<div class="flavor">
-					<h4>Blackberry</h4>
-					<h4>Glazing: None</h4>
-				</div>
-
-				<div class="">
 					<h3>3</h3>
+					
 				</div>
 
 				<div class="">
-					<h3>$13.50</h3>
-				</div> -->
+					<h1 id="priceinput" class=words_light></h1>
+
+				</div>
 
 			</div>
-
 
 			<br>
 			<br>
@@ -127,7 +128,7 @@
 
 
 	<div id="box3">
-		<button type="button" class="button4" onclick="window.location.href='ItemDetails.html';"><u>Return to Item Details</u>
+		<button type="button" class="button4" onclick="window.location.href='MenuPage.html';"><u>Return to Menu</u>
 		</button>
 	</div>
 </body>
