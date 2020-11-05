@@ -13,6 +13,7 @@ class Product{
   }
 }
 
+
 function addToCart(){
   alert("Item added to cart!");
   //var price = document.getElementById("productprice").value;
@@ -23,13 +24,26 @@ function addToCart(){
   var shop = new Product(quantity, glazing);
  
   productArr.push(shop);
-
   updateCartNumber(productArr.length);
-
   //var quantCount = float(quantity)
-
   //console.log("Here's the productArr:")
-  console.log(productArr);
+  const queryString = window.location.search
+  const urlParams = new URLSearchParams(queryString)
+  let product_type = urlParams.get("product_type")
+  console.log(product_type)
+  
+  var itemdata = JSON.parse(localStorage.getItem(product_type));
+  console.log(itemdata)
+  var productname = itemdata["name"]
+  console.log(productname)
+  console.log(productArr)
+  if (productname in cart) {
+    cart[productname] += parseInt(quantity);
+
+  } else {
+    cart[productname] = parseInt(quantity);
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
 
 }
 
@@ -63,22 +77,28 @@ function updateCartNumber(num) {
 }
 
 function copyText() {
-  var link = window.location.href;
-  console.log(link);
-  var linkparts = link.split("?");
-  if (linkparts.length == 2) {
-    var info = linkparts[1];
-    var more = JSON.parse(localStorage.getItem(info));
-    // alert(more);
-    console.log(more);
-    // document.getElementById("rawjson").innerHTML =
-    // "name: " + mmore.name + "<br/> price: " + more.price;
+  const queryString = window.location.search
+  const urlParams = new URLSearchParams(queryString)
+  let product_type = urlParams.get("product_type")
+  console.log(product_type)
+
+  // var link = window.location.href;
+  // console.log(link);
+  // var linkparts = link.split("?");
+  // if (linkparts.length == 2) {
+  //   var info = linkparts[1];
+  var more = JSON.parse(localStorage.getItem(product_type));
+  //   // alert(more);
+  //   console.log(more);
+  //   // document.getElementById("rawjson").innerHTML =
+  //   // "name: " + mmore.name + "<br/> price: " + more.price;
+  
     document.getElementById("productname").innerHTML = more.name;
     document.getElementById("productprice").innerHTML =
       "<br/> Price: $" + more.price;
     document.getElementById("productdesc").innerHTML =
       "<br/>" + more.description;
-  }
+  // }
 }
 
 //   if (more.name=="Original"){
