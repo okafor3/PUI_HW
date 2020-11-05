@@ -14,8 +14,10 @@
 <script>
 
 	function loadCart() { 
+		
 		var cart = JSON.parse(localStorage.getItem("cart") || "{}");
 		console.log(cart);
+		console.log(productArr);
 		var cartCount = 0;
 		var cartinfo = ""; 
 		var quant = "";

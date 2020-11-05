@@ -6,22 +6,22 @@ function newPage() {
 var productArr = []
 
 class Product{
-  constructor (price,quantity,glazing){
-    this.price = price;
+  constructor (quantity,glazing){
+    //this.price = price;
     this.quantity = quantity;
     this.glazing = glazing;
   }
 }
 
 function addToCart(){
-  var price = document.getElementById("productprice").value;
+  alert("Item added to cart!");
+  //var price = document.getElementById("productprice").value;
   var quantity = document.getElementById("num").value;
   //alert('selected the quantity:' + quantity)
   //alert('selected the price:' + price)
   var glazing = document.getElementById("glaze").value;
-
-  var shop = new Product(price, quantity, glazing);
-
+  var shop = new Product(quantity, glazing);
+ 
   productArr.push(shop);
 
   updateCartNumber(productArr.length);
@@ -30,6 +30,7 @@ function addToCart(){
 
   //console.log("Here's the productArr:")
   console.log(productArr);
+
 }
 
 function addcurcaketocart(curcakeid) {
