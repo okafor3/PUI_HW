@@ -18,25 +18,31 @@
 		console.log(cart);
 		var cartCount = 0;
 		var cartinfo = ""; 
+		var quant = "";
 		var priceinput = "";
-		var price = 0;
+		var totalprice = 0;
 		for (var productid in cart) {   
 			if (cart.hasOwnProperty(productid)) {
 			console.log(productid, cart[productid]);
 			price = cart[productid] * 6.25;
 			cartinfo += productid + " : " +cart[productid] + "<br/>";
+			console.log(quant)
+
 			priceinput += "$"+ price+"<br/>";
 			//cartCount += cart[productid];
 			cartCount += 1;
+			quant += cart[productid]+"<br/>";
+
+			totalprice = totalprice+price;
 			}
 			document.getElementById("cartinfo").innerHTML = cartinfo;
+			document.getElementById("quant").innerHTML = quant;
 			document.getElementById("priceinput").innerHTML = priceinput;
+			document.getElementById("totalprice").innerHTML = totalprice;
 
-			console.log(price)
 		}
 
 		document.getElementById("cartCount").innerHTML = cartCount;
-
 	
 	}
 
@@ -81,18 +87,18 @@
 
                 <img src="plain.png" class="small_circle" alt="bun"/>
 				<div class="flavor">
-					<h5>Item(s) / # of Orders </h5>
+					<h5>Item(s) x Orders</h5>
 				</div>
 
 				<div class="">
-					<h5>Quant.</h5>
+					<h5>Quant</h5>
 				</div>
 				<div class="">
 					<h5>Price</h5>
 				</div>
 				
 				<!--First Row-->
-                <img src="circle_white.png" class="small_circle" alt="bun"/>
+                <img src="six_white.png" class="small_circle" alt="bun"/>
 				<div class="flavor">
 					<!-- <h1 id="productname1" class = "words6"></h1>
 					<h2 id="productglaze" class = "words_light"></h2> -->
@@ -101,14 +107,14 @@
 
 
 				<div class="flavor">
-					<h3>3</h3>
-					
+					<h1 id="quant" class=words_light></h1>	
 				</div>
 
 				<div class="">
 					<h1 id="priceinput" class=words_light></h1>
-
 				</div>
+
+			
 
 			</div>
 
@@ -116,6 +122,9 @@
 			<br>
 
 			<div class="flex-vertical-container">
+				<h2>Total Price:</h2>
+				<h1 id="totalprice" class=words_light></h1>
+				<br>
 				<button type="button" class="button">Continue Shopping </button>
 				<button type="button" class="button3">Check Out </button> </div>
 				<br>
