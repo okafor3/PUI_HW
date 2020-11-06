@@ -39,11 +39,11 @@ function addToCart(){
   console.log(productArr)
   if (productname in cart) {
     cart[productname] += parseInt(quantity);
-    cart[glaze] += parseInt(glazing);
+    cart[glaze] = glazing;
 
   } else {
     cart[productname] = parseInt(quantity);
-    cart[glaze] += parseInt(glazing);
+    cart[glaze] = glazing;
   }
   localStorage.setItem("cart", JSON.stringify(cart));
 
