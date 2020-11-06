@@ -100,24 +100,23 @@ function copyText() {
       "<br/> Price: $" + more.price;
     document.getElementById("productdesc").innerHTML =
       "<br/>" + more.description;
-  // }
-}
 
-  // if (more.name=="Original"){
-  //   document.body.style.backgroundImage = "url('back1.png')";
-  // }
-  // if (more.name=="Original Gluten Free"){
-  //   document.body.style.backgroundImage = "url('back2.png')";
-  // }
-  // if (more.name=="Blackberry"){
-  //   document.body.style.backgroundImage = "url('back3.png')";
-  // }
-  // if (more.name=="Pumpkin Spice"){
-  //   document.body.style.backgroundImage = "url('back4.png')";
-  // }
-  // if (more.name=="Walnut"){
-  //   document.body.style.backgroundImage = "url('back5.png')";
-  // }
-  // if (more.name=="Caramel Pecan"){
-  //   document.body.style.backgroundImage = "url('back6.png')";
-  // }
+  if (more.name=="Original"){
+    document.body.style.backgroundImage = "url('back1.png')";
+  }
+  if (more.name=="Original Gluten Free"){
+    document.body.style.backgroundImage = "url('back2.png')";
+  }
+  if (more.name=="Blackberry"){
+    document.body.style.backgroundImage = "url('back3.png')";
+  }
+  if (more.name=="Pumpkin Spice"){
+    document.body.style.backgroundImage = "url('back4.png')";
+  }
+  if (more.name=="Walnut"){
+    document.body.style.backgroundImage = "url('back5.png')";
+  }
+  if (more.name=="Caramel Pecan"){
+    document.body.style.backgroundImage = "url('back6.png')";
+  }
+}
