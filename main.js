@@ -39,11 +39,11 @@ function addToCart(){
   console.log(productArr)
   if (productname in cart) {
     cart[productname] += parseInt(quantity);
-    cart[glaze] = glazing;
+    //cart[glaze] += parseInt(glazing);
 
   } else {
     cart[productname] = parseInt(quantity);
-    cart[glaze] = glazing;
+    //cart[glaze] += parseInt(glazing);
   }
   localStorage.setItem("cart", JSON.stringify(cart));
 
@@ -100,6 +100,7 @@ function copyText() {
       "<br/> Price: $" + more.price;
     document.getElementById("productdesc").innerHTML =
       "<br/>" + more.description;
+
 
   if (more.name=="Original"){
     document.body.style.backgroundImage = "url('back1.png')";
