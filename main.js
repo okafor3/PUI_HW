@@ -15,10 +15,7 @@ class Product{
 
 function addToCart(){
   alert("Item added to cart!");
-  //var price = document.getElementById("productprice").value;
   var quantity = document.getElementById("num").value;
-  //alert('selected the quantity:' + quantity)
-  //alert('selected the price:' + price)
   var glazing = document.getElementById("glaze").value;
   var shop = new Product(quantity, glazing);
  
