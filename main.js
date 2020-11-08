@@ -7,7 +7,6 @@ var productArr = []
 
 class Product{
   constructor (quantity,glazing){
-    //this.price = price;
     this.quantity = quantity;
     this.glazing = glazing;
   }
@@ -33,23 +32,18 @@ function addToCart(){
   console.log(product_type)
   
   var itemdata = JSON.parse(localStorage.getItem(product_type));
-  console.log(itemdata)
   var productname = itemdata["name"]
-  console.log(productname)
-  console.log(productArr)
   if (productname in cart) {
     cart[productname] += parseInt(quantity);
-    //cart[glaze] += parseInt(glazing);
 
   } else {
     cart[productname] = parseInt(quantity);
-    //cart[glaze] += parseInt(glazing);
   }
   localStorage.setItem("cart", JSON.stringify(cart));
 
 }
 
-function addcurcaketocart(curcakeid) {
+function addCurrentItem(curcakeid) {
   // var price = document.getElementById("productprice").value;
   // var quantity = document.getElementById("num").value;
   // var glazing = document.getElementById("glaze").value;
@@ -78,7 +72,7 @@ function updateCartNumber(num) {
   cartCount.innerHTML = num
 }
 
-function copyText() {
+function transferDetails() {
   const queryString = window.location.search
   const urlParams = new URLSearchParams(queryString)
   let product_type = urlParams.get("product_type")
@@ -101,7 +95,6 @@ function copyText() {
     document.getElementById("productdesc").innerHTML =
       "<br/>" + more.description;
 
-
   if (more.name=="Original"){
     document.body.style.backgroundImage = "url('back1.png')";
   }
@@ -120,4 +113,41 @@ function copyText() {
   if (more.name=="Caramel Pecan"){
     document.body.style.backgroundImage = "url('back6.png')";
   }
+}
+
+function loadCart() { 
+		
+  var cart = JSON.parse(localStorage.getItem("cart") || "{}");
+  var cartCount = 0;
+  var cartinfo = ""; 
+  var quant = "";
+  var priceinput = "";
+  var totalprice = 0;
+  for (var productid in cart) {   
+    if (cart.hasOwnProperty(productid)) {
+    price = cart[productid] * 6.25;
+    cartinfo += productid + " : " +cart[productid] + "<br/>";
+
+    priceinput += "$"+ price+"<br/>";
+    //cartCount += cart[productid];
+    cartCount += 1;
+    quant += cart[productid]+"<br/>";
+
+    totalprice = totalprice+price;
+    }
+    document.getElementById("cartinfo").innerHTML = cartinfo;
+    document.getElementById("quant").innerHTML = quant;
+    document.getElementById("priceinput").innerHTML = priceinput;
+    document.getElementById("totalprice").innerHTML = totalprice;
+
+  }
+
+  document.getElementById("cartCount").innerHTML = cartCount;
+
+}
+
+function clearCart() {
+alert("Your cart has been cleared! Please refresh the page.");
+cart = {};
+localStorage.setItem("cart", JSON.stringify(cart));
 }

@@ -11,51 +11,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
-<script>
-
-	function loadCart() { 
-		
-		var cart = JSON.parse(localStorage.getItem("cart") || "{}");
-		console.log(cart);
-		console.log(productArr);
-		var cartCount = 0;
-		var cartinfo = ""; 
-		var quant = "";
-		var priceinput = "";
-		var totalprice = 0;
-		for (var productid in cart) {   
-			if (cart.hasOwnProperty(productid)) {
-			console.log(productid, cart[productid]);
-			price = cart[productid] * 6.25;
-			cartinfo += productid + " : " +cart[productid] + "<br/>";
-			console.log(quant)
-
-			priceinput += "$"+ price+"<br/>";
-			//cartCount += cart[productid];
-			cartCount += 1;
-			quant += cart[productid]+"<br/>";
-
-			totalprice = totalprice+price;
-			}
-			document.getElementById("cartinfo").innerHTML = cartinfo;
-			document.getElementById("quant").innerHTML = quant;
-			document.getElementById("priceinput").innerHTML = priceinput;
-			document.getElementById("totalprice").innerHTML = totalprice;
-
-		}
-
-		document.getElementById("cartCount").innerHTML = cartCount;
-	
-	}
-
-    function clearCart() {
-	  //reset the cart.
-	  alert("Your cart has been cleared! Please refresh the page.");
-      cart = {};
-	  localStorage.setItem("cart", JSON.stringify(cart));
-    }
-  </script>
-
 <body class="item" onload="loadCart()">
 	<header>
 		<!-- Navigation Bar -->
